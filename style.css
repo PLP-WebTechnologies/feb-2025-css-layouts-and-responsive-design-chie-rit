@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Zen+Dots&display=swap');
+
+/* css variables */
+:root {
+    /* colors */
+    --background-color: #fef5e9;
+    --primary-color: #869db8;
+    --secondary-color: #36ba98;
+    --orange: #fc4100;
+    --yellow: #e76f51;
+    --pink: #b771e5;
+    --white: #fff; 
+    --black: #1a1a1a;
+    --p: 1.25rem;
+
+}
+
+/* css resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+/* typography */
+h1{
+    font-family: 'Zen Dots';
+    font-weight: 900;
+}
+h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 0.825rem;
+    color: #d3d3d3;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+html {
+    font-family: 'Orbitron' sans-serif;
+    font-size: 12px;
+}
+
+body {
+    background-color: #f8f5e9;
+    padding: 3.125rem;
+}
+
+/* components */
+.flex {
+    display: flex;
+}
+
+.gap {
+    gap: 0.5rem;
+}
+
+.icon__img {
+    width: 24px;
+    height: 24px;
+}
+
+.is_active {
+    display: none;
+}
+
+
+
+/* nav */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: 0.825rem;
+    font-weight: 800;
+    letter-spacing: 30%;
+}
+
+nav .nav-links {
+    display: none;
+}
+
+#navbar {
+    width: 100%;
+    text-align: center;
+    
+}
+
+#navbar > li {
+    cursor: pointer;
+    border: 1px solid var(--primary-color);
+    padding: 1rem;
+    transition: all 3s ease-in-out;
+    
+}
+
+#navbar > li:hover {
+    background-color: #d3d3d3;
+}
+
+
+/* heading */
+.heading {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.heading .pink{
+    color: var(--pink);
+}
+
+.heading .blue {
+    color: var(--primary-color);
+}
+
+
+/* leaderboard */
+
+.leaderboard {
+    margin: 2rem 0;
+}
+
+.card {
+    width: 100%;
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    padding: var(--p);
+    border: 2px solid var(--black);
+    border-radius: 1.25rem;
+    margin-bottom: 4rem;
+
+}
+
+.card__header h1{
+    font-size: 2.5rem;
+}
+
+.card__body h3 {
+    margin-bottom: 1rem;
+}
+
+.card__body--content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.25rem;
+    column-gap: 2rem;
+    justify-items: start;
+    justify-content: space-between;
+}
+
+.card__body--content > div > div {
+    margin: 1rem 0;
+}
+
+
+/* card variations */
+
+.one {
+    box-shadow: 8px 8px 1px 0px var(--secondary-color);
+}
+
+.two {
+    box-shadow: 8px 8px 1px 0px var(--yellow);
+}
+
+.three {
+    box-shadow: 8px 8px 1px 0px var(--orange);
+}
+
+.default {
+    box-shadow: 8px 8px 1px 0px var(--primary-color);
+}
+
+
+@media only screen and (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav .nav-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .leaderboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .card {
+        max-width: 25rem;
+        grid-template-columns: none;
+        justify-items: center;
+        font-size: 10px;
+    }
+
+    .card__header h1, .card__body h3 {
+        text-align: center;
+        margin: 1rem;
+    }
+
+    .leaderboard__default {
+        display: none;
+    }
+
+    .leaderboard__table {
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-spacing: 4rem;
+        font-size: 12px;
+        width: 100%;
+        padding: var(--p);
+        grid-column: span 3;
+    }
+
+    .leaderboard__table thead {
+        margin: 1.25rem 0;
+    }
+
+    table .table__row {
+        background-color: var(--white);
+        border: 2px solid var(--black);
+
+    }
+
+    table th, td {
+        padding: 6px 12px; 
+        text-align: left;
+    }
+}
+
+
+@media only screen and (min-width: 640px) and (max-width: 1024) {
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        padding: 6.25rem;
+    }
+
+    .card {
+        max-width: 40rem;
+    }
+}
